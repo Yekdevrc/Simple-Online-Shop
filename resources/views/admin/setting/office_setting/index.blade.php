@@ -5,7 +5,7 @@
         <h3 class="page-title"> Office Setting </h3>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{route('admindashboard')}}">Dashboard</a></li>
+                <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Setting</li>
             </ol>
         </nav>
@@ -18,6 +18,7 @@
                         <h1 class="card-title">Office Setting</h1>
                     </div>
                     <form class="" action="{{route('admin.setting.officeSetting.update', $officeSetting)}}"
+                          enctype="multipart/form-data"
                           method="post">
                         @csrf
                         @method('put')
@@ -123,6 +124,32 @@
                                     <div class="text-danger">{{$message}}</div>
                                     @enderror
                                 </div>
+                                <div class="col-md-6 form-group">
+                                    <label for="address" class="form-label">Address</label>
+                                    <input type="text"
+                                           name="address"
+                                           class="form-control @error('address') is-invalid @enderror"
+                                           id="address"
+                                           value="{{old('address', $officeSetting->address)}}"
+                                           placeholder="address"
+                                    >
+                                    @error('address')
+                                    <div class="text-danger">{{$message}}</div>
+                                    @enderror
+                                </div>
+                                <div class="col-md-6 form-group">
+                                    <label for="delivery_charge" class="form-label">Delivery Charge</label>
+                                    <input type="number"
+                                           name="delivery_charge"
+                                           class="form-control @error('delivery_charge') is-invalid @enderror"
+                                           id="delivery_charge"
+                                           value="{{old('delivery_charge', $officeSetting->delivery_charge)}}"
+                                           placeholder="delivery_charge"
+                                    >
+                                    @error('delivery_charge')
+                                    <div class="text-danger">{{$message}}</div>
+                                    @enderror
+                                </div>
                             </div>
                             <div class="col-md-12 mt-2 form-group">
                                 <label for="introduction" class="form-label">Introduction</label>
@@ -130,7 +157,7 @@
                                           id="introduction"
                                           cols="50" rows="5"
                                           class="form-control"
-                                ></textarea>
+                                >{{old('introduction', $officeSetting->introduction)}}</textarea>
                                 @error('introduction')
                                 <div class="invalid-feedback">{{$message}}</div>
                                 @enderror

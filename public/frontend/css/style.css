@@ -1237,19 +1237,11 @@ button {
 }
 
 .hero-slider-one {
-    background: url("../assets/images/homepage-one/hero-slider-one.webp") no-repeat center/cover
-}
-
-.hero-slider-two {
-    background: url("../assets/images/homepage-one/hero-slider-two.webp") no-repeat center/cover
-}
-
-.hero-slider-three {
-    background: url("../assets/images/homepage-one/hero-slider-three.webp") no-repeat center/cover
+    background: no-repeat center/cover
 }
 
 @media (max-width: 767px) {
-    .hero-slider-one, .hero-slider-two, .hero-slider-three {
+    .hero-slider-one{
         background-position: left
     }
 }
@@ -1376,7 +1368,7 @@ button {
 }
 
 .wrapper-one {
-    background: url("../assets/images/homepage-one/syle-bg-one.webp") no-repeat center/cover
+    background: no-repeat center/cover
 }
 
 .wrapper-one .shop-btn {
@@ -1446,7 +1438,7 @@ button {
 }
 
 .wrapper-two {
-    background: url("../assets/images/homepage-one/style-bg-two.webp") no-repeat center/cover
+    background:no-repeat center/cover
 }
 
 .wrapper-two .shop-btn {

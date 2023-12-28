@@ -22,7 +22,9 @@ class OfficeSettingSeeder extends Seeder
             'phone' => null,
             'website' => null,
             'facebook_link' => null,
-            'introduction' => null
+            'introduction' => null,
+            'address'=> null,
+            'delivery_charge'=>null
         ]);
     }
 }

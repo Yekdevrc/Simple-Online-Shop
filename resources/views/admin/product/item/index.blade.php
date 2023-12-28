@@ -44,11 +44,11 @@
                             <td>{{$item->brand->title??''}}</td>
                             <td>{{$item->discount->rate??''}}</td>
                             <td class="d-flex mt-4">
-                                <a href="{{route('admin.product.brand.edit', $item)}}"
+                                <a href="{{route('admin.product.item.edit', $item)}}"
                                    class="btn btn-sm btn-outline-success me-1" title="Edit">
                                     <i class="fa fa-pencil"></i>
                                 </a>
-                                <form action="{{route('admin.product.brand.destroy',$item)}}" method="post">
+                                <form action="{{route('admin.product.item.destroy',$item)}}" method="post">
                                     @csrf
                                     @method('delete')
                                     <button type="submit" class="btn btn-sm btn-outline-danger delete_confirm"

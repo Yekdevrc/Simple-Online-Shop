@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Frontend;
 use App\Models\Product\Brand;
 use App\Models\Product\Category;
 use App\Models\Product\Item;
+use App\Models\Setting\OfficeSetting;
+use App\Models\Testmonial;
 use App\Models\Website\Slider;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -15,12 +17,13 @@ class FrontendController extends BaseController
 {
     public function index(): Factory|Application|View|\Illuminate\Contracts\Foundation\Application
     {
+        $first=Item::latest()->first();
+        $second=Item::latest()->skip(1)->take(1)->first();
         $categories =Category::all();
         $brands=Brand::all();
         $sliders=Slider::all();
         $newArrivals=Item::with('category', 'brand', 'discount')->orderBy('created_at', 'desc')->get();
-//        $topSellingProducts=Item::where()->get();
-        return view('frontend.index', compact('categories', 'brands', 'newArrivals', 'sliders'));
+        return view('frontend.index', compact('categories', 'brands', 'newArrivals', 'sliders', 'first', 'second'));
     }
 
     public function wishlist()
@@ -38,7 +41,9 @@ class FrontendController extends BaseController
 
     public function about()
     {
-        return \view('frontend.pages.about');
+        $officeSetting=OfficeSetting::first();
+        $testimonials=Testmonial::latest()->get();
+        return \view('frontend.pages.about', compact('officeSetting', 'testimonials'));
     }
 
     public function product()

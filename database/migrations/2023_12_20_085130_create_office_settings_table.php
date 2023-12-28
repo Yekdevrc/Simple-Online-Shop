@@ -17,11 +17,13 @@ return new class extends Migration
             $table->string('email')->nullable();
             $table->string('logo')->nullable();
             $table->string('background_image')->nullable();
-            $table->string('google_map')->nullable();
+            $table->text('google_map')->nullable();
             $table->string('phone')->nullable();
-            $table->string('website')->nullable();
-            $table->string('facebook_link')->nullable();
-            $table->string('introduction')->nullable();
+            $table->text('website')->nullable();
+            $table->text('facebook_link')->nullable();
+            $table->text('introduction')->nullable();
+            $table->string('address')->nullable();
+            $table->string('delivery_charge')->nullable();
 //            $table->foreignId('fiscal_year_id')->nullable()->constrained()->cascadeOnDelete();
             $table->timestamps();
             $table->softDeletes();

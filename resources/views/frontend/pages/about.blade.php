@@ -20,49 +20,17 @@
                 <div class="row align-items-center gy-5">
                     <div class="col-lg-6">
                         <div class="about-img" data-aos="fade-right">
-                            <img src="{{asset('frontend/assets/images/homepage-one/about/about-img-1.webp')}}" alt="img">
+                            <img src="{{$officeSetting->background_image_url}}" alt="img">
                         </div>
                     </div>
                     <div class="col-lg-6">
                         <div class="about-content" data-aos="fade-up">
                             <h3 class="about-title">Know More About Us?</h3>
-                            <p class="about-info">
-                                It is a long established fact that a reader will be distracted by the readable
-                                content of a page when looking at its layout. It is a long established fact a
-                                that a reader will be distracted by the readable content of a page when our
-                                looking at its layout.</p>
+                            <p class="about-info">{{$officeSetting->introduction}}</p>
                             <div class="about-list">
-                                <ul>
-                                    <li>
-<span>
-<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="12.5" cy="12.5" r="12.5" fill="#AE1C9A" />
-<path d="M10.1691 13.2566C10.5172 12.8649 10.8498 12.4803 11.198 12.1029C12.7761 10.3864 14.4973 8.80535 16.4699 7.47353C16.6749 7.33465 16.8876 7.20289 17.1042 7.0747C17.1739 7.03552 17.2628 7.00347 17.344 7.00347C17.7888 6.99635 18.2337 6.99991 18.6746 6.99991C18.8138 6.99991 18.926 7.04265 18.9763 7.16728C19.0266 7.28836 18.9879 7.39163 18.8835 7.48065C17.0772 8.99765 15.588 10.7639 14.1724 12.5872C12.8689 14.2644 11.6621 16.0022 10.5288 17.7863C10.4901 17.8504 10.4398 17.918 10.3741 17.9572C10.2348 18.0462 10.0763 17.9964 9.97183 17.8432C9.79777 17.5868 9.63532 17.3233 9.44966 17.074C8.36278 15.6318 7.26817 14.1896 6.17742 12.751C6.13488 12.6976 6.08846 12.6441 6.04978 12.5872C5.97243 12.4732 5.97629 12.3486 6.07686 12.256C6.36695 11.9853 6.66478 11.7147 6.96261 11.4476C7.07864 11.3444 7.20242 11.3515 7.35713 11.4476C7.83675 11.7539 8.31637 12.0637 8.79212 12.3699C9.24853 12.6655 9.70495 12.9575 10.1691 13.2566Z" fill="white" />
-</svg>
-</span>
-                                        <p>Complete Sanitization and cleaning of bathroom</p>
-                                    </li>
-                                    <li>
-<span>
-<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="12.5" cy="12.5" r="12.5" fill="#AE1C9A" />
-<path d="M10.1691 13.2566C10.5172 12.8649 10.8498 12.4803 11.198 12.1029C12.7761 10.3864 14.4973 8.80535 16.4699 7.47353C16.6749 7.33465 16.8876 7.20289 17.1042 7.0747C17.1739 7.03552 17.2628 7.00347 17.344 7.00347C17.7888 6.99635 18.2337 6.99991 18.6746 6.99991C18.8138 6.99991 18.926 7.04265 18.9763 7.16728C19.0266 7.28836 18.9879 7.39163 18.8835 7.48065C17.0772 8.99765 15.588 10.7639 14.1724 12.5872C12.8689 14.2644 11.6621 16.0022 10.5288 17.7863C10.4901 17.8504 10.4398 17.918 10.3741 17.9572C10.2348 18.0462 10.0763 17.9964 9.97183 17.8432C9.79777 17.5868 9.63532 17.3233 9.44966 17.074C8.36278 15.6318 7.26817 14.1896 6.17742 12.751C6.13488 12.6976 6.08846 12.6441 6.04978 12.5872C5.97243 12.4732 5.97629 12.3486 6.07686 12.256C6.36695 11.9853 6.66478 11.7147 6.96261 11.4476C7.07864 11.3444 7.20242 11.3515 7.35713 11.4476C7.83675 11.7539 8.31637 12.0637 8.79212 12.3699C9.24853 12.6655 9.70495 12.9575 10.1691 13.2566Z" fill="white" />
-</svg>
-</span>
-                                        <p>when looking at its layout. It is a long established fact </p>
-                                    </li>
-                                    <li>
-<span>
-<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="12.5" cy="12.5" r="12.5" fill="#AE1C9A" />
-<path d="M10.1691 13.2566C10.5172 12.8649 10.8498 12.4803 11.198 12.1029C12.7761 10.3864 14.4973 8.80535 16.4699 7.47353C16.6749 7.33465 16.8876 7.20289 17.1042 7.0747C17.1739 7.03552 17.2628 7.00347 17.344 7.00347C17.7888 6.99635 18.2337 6.99991 18.6746 6.99991C18.8138 6.99991 18.926 7.04265 18.9763 7.16728C19.0266 7.28836 18.9879 7.39163 18.8835 7.48065C17.0772 8.99765 15.588 10.7639 14.1724 12.5872C12.8689 14.2644 11.6621 16.0022 10.5288 17.7863C10.4901 17.8504 10.4398 17.918 10.3741 17.9572C10.2348 18.0462 10.0763 17.9964 9.97183 17.8432C9.79777 17.5868 9.63532 17.3233 9.44966 17.074C8.36278 15.6318 7.26817 14.1896 6.17742 12.751C6.13488 12.6976 6.08846 12.6441 6.04978 12.5872C5.97243 12.4732 5.97629 12.3486 6.07686 12.256C6.36695 11.9853 6.66478 11.7147 6.96261 11.4476C7.07864 11.3444 7.20242 11.3515 7.35713 11.4476C7.83675 11.7539 8.31637 12.0637 8.79212 12.3699C9.24853 12.6655 9.70495 12.9575 10.1691 13.2566Z" fill="white" />
-</svg>
-</span>
-                                        <p>Complete Sanitization and cleaning of bathroom</p>
-                                    </li>
-                                </ul>
+
                             </div>
-                            <a href="contact-us.html" class="shop-btn">
+                            <a href="{{route('contact')}}" class="shop-btn">
                                 Contact us
                                 <span>
 <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -175,6 +143,7 @@
             <div class="position-relative px-5">
                 <div class="swiper about-swiper">
                     <div class="swiper-wrapper">
+                        @foreach($testimonials as $testimonial)
                         <div class="swiper-slide testimonial-wrapper">
                             <div class="blockquote">
 <span>
@@ -184,11 +153,7 @@
 </svg>
 </span>
                             </div>
-                            <p class="testimonial-details">enean ullamcorper at magna et in to
-                                <span class="testimonial-inner-text">
-the a iaculis. Mauris
-mattis ac diam
-</span> a ultricies. Sed pretium.
+                            <p class="testimonial-details">{{$testimonial->message}}
                             </p>
                             <div class="ratings">
 <span>
@@ -204,191 +169,15 @@ mattis ac diam
                             <div class="divider"></div>
                             <div class="testimonial-info">
                                 <div class="testimonial-img">
-                                    <img src="{{asset('frontend/assets/images/homepage-one/about/testimonial-img-1.webp')}}" alt="img">
+                                    <img src="{{$testimonial->photo_url}}" height="90" width="90" class="rounded-circle" alt="img">
                                 </div>
                                 <div class="testimonial-info-details">
-                                    <h5 class="testimonial-name">Md Abdur Rahman</h5>
-                                    <p class="testimonial-title">Ceo of <span class="title-inner">DesginCraft</span></p>
+                                    <h5 class="testimonial-name">{{$testimonial->name}}</h5>
+                                    <p class="testimonial-title">{{$testimonial->designation}} of <span class="title-inner">{{$testimonial->company}}</span></p>
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-slide testimonial-wrapper">
-                            <div class="blockquote">
-<span>
-<svg width="38" height="30" viewBox="0 0 38 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M7.82644 11.9446C8.29006 9.03034 11.9328 5.91742 14.7808 5.85119C14.9795 5.85119 15.1782 5.78496 15.3107 5.65249C15.4431 5.58626 15.5756 5.52003 15.6418 5.32133C16.6353 3.46683 16.1055 2.00972 14.4497 0.817536C12.5289 -0.573341 9.48225 0.817536 7.9589 2.07595C4.11743 5.2551 0.20973 10.7523 0.408427 15.9847C-0.253896 19.4951 -0.121431 23.2703 0.872052 26.3832C1.53437 28.3702 3.45511 29.3636 5.44208 29.4961C7.42905 29.6287 11.5354 30.2247 13.3237 29.0326C15.112 27.8403 15.2445 25.5222 15.4431 23.5353C15.6418 21.3496 16.2379 17.2431 14.3834 15.5211C12.5289 13.8653 7.23035 15.6536 7.82644 11.9446Z" fill="#f6f6f6" />
-<path d="M29.683 11.9446C30.1466 9.03034 33.7893 5.91742 36.6374 5.85119C36.8361 5.85119 37.0348 5.78496 37.1673 5.65249C37.2998 5.58626 37.4322 5.52003 37.4985 5.32133C38.492 3.46683 37.9622 2.00972 36.3064 0.817536C34.3856 -0.573341 31.3389 0.817536 29.8155 2.07595C25.974 5.2551 22.0663 10.7524 22.265 15.9847C21.6027 19.4951 21.7351 23.2703 22.7285 26.3832C23.3908 28.3702 25.3116 29.3636 27.2987 29.4961C29.2856 29.6287 33.392 30.2247 35.1803 29.0326C36.9685 27.8403 37.101 25.5222 37.2997 23.5353C37.4984 21.3496 38.0945 17.2431 36.24 15.5211C34.3855 13.8653 29.0207 15.6536 29.683 11.9446Z" fill="#f6f6f6" />
-</svg>
-</span>
-                            </div>
-                            <p class="testimonial-details">Almost every imaginable design is possible and customizations
-                                are allowed on every level. Some features could make use of better controls. If you know
-                                how to operate your mouse, then you are all set to use this pagebuilder.
-                            </p>
-                            <div class="ratings">
-<span>
-<svg width="75" height="15" viewBox="0 0 75 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M7.5 0L9.18386 5.18237H14.6329L10.2245 8.38525L11.9084 13.5676L7.5 10.3647L3.09161 13.5676L4.77547 8.38525L0.367076 5.18237H5.81614L7.5 0Z" fill="#FFA800" />
-<path d="M22.5 0L24.1839 5.18237H29.6329L25.2245 8.38525L26.9084 13.5676L22.5 10.3647L18.0916 13.5676L19.7755 8.38525L15.3671 5.18237H20.8161L22.5 0Z" fill="#FFA800" />
-<path d="M37.5 0L39.1839 5.18237H44.6329L40.2245 8.38525L41.9084 13.5676L37.5 10.3647L33.0916 13.5676L34.7755 8.38525L30.3671 5.18237H35.8161L37.5 0Z" fill="#FFA800" />
-<path d="M52.5 0L54.1839 5.18237H59.6329L55.2245 8.38525L56.9084 13.5676L52.5 10.3647L48.0916 13.5676L49.7755 8.38525L45.3671 5.18237H50.8161L52.5 0Z" fill="#FFA800" />
-<path d="M67.5 0L69.1839 5.18237H74.6329L70.2245 8.38525L71.9084 13.5676L67.5 10.3647L63.0916 13.5676L64.7755 8.38525L60.3671 5.18237H65.8161L67.5 0Z" fill="#FFA800" />
-</svg>
-</span>
-                            </div>
-                            <div class="divider"></div>
-                            <div class="testimonial-info">
-                                <div class="testimonial-img">
-                                    <img src="{{asset('frontend/assets/images/homepage-one/about/testimonial-img-2.webp')}}" alt="img">
-                                </div>
-                                <div class="testimonial-info-details">
-                                    <h5 class="testimonial-name">Mohammad Sajjad Hossain</h5>
-                                    <p class="testimonial-title">Cfo of <span class="title-inner">DesginX</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide testimonial-wrapper">
-                            <div class="blockquote">
-<span>
-<svg width="38" height="30" viewBox="0 0 38 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M7.82644 11.9446C8.29006 9.03034 11.9328 5.91742 14.7808 5.85119C14.9795 5.85119 15.1782 5.78496 15.3107 5.65249C15.4431 5.58626 15.5756 5.52003 15.6418 5.32133C16.6353 3.46683 16.1055 2.00972 14.4497 0.817536C12.5289 -0.573341 9.48225 0.817536 7.9589 2.07595C4.11743 5.2551 0.20973 10.7523 0.408427 15.9847C-0.253896 19.4951 -0.121431 23.2703 0.872052 26.3832C1.53437 28.3702 3.45511 29.3636 5.44208 29.4961C7.42905 29.6287 11.5354 30.2247 13.3237 29.0326C15.112 27.8403 15.2445 25.5222 15.4431 23.5353C15.6418 21.3496 16.2379 17.2431 14.3834 15.5211C12.5289 13.8653 7.23035 15.6536 7.82644 11.9446Z" fill="#f6f6f6" />
-<path d="M29.683 11.9446C30.1466 9.03034 33.7893 5.91742 36.6374 5.85119C36.8361 5.85119 37.0348 5.78496 37.1673 5.65249C37.2998 5.58626 37.4322 5.52003 37.4985 5.32133C38.492 3.46683 37.9622 2.00972 36.3064 0.817536C34.3856 -0.573341 31.3389 0.817536 29.8155 2.07595C25.974 5.2551 22.0663 10.7524 22.265 15.9847C21.6027 19.4951 21.7351 23.2703 22.7285 26.3832C23.3908 28.3702 25.3116 29.3636 27.2987 29.4961C29.2856 29.6287 33.392 30.2247 35.1803 29.0326C36.9685 27.8403 37.101 25.5222 37.2997 23.5353C37.4984 21.3496 38.0945 17.2431 36.24 15.5211C34.3855 13.8653 29.0207 15.6536 29.683 11.9446Z" fill="#f6f6f6" />
-</svg>
-</span>
-                            </div>
-                            <p class="testimonial-details">As a digital marketing agency our team works day in and day
-                                out on websites of all kinds. Some of the most common errors we see are websites not
-                                optimized for SEO because of old, boring, or out of date website themes or designs.
-                            </p>
-                            <div class="ratings">
-<span>
-<svg width="75" height="15" viewBox="0 0 75 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M7.5 0L9.18386 5.18237H14.6329L10.2245 8.38525L11.9084 13.5676L7.5 10.3647L3.09161 13.5676L4.77547 8.38525L0.367076 5.18237H5.81614L7.5 0Z" fill="#FFA800" />
-<path d="M22.5 0L24.1839 5.18237H29.6329L25.2245 8.38525L26.9084 13.5676L22.5 10.3647L18.0916 13.5676L19.7755 8.38525L15.3671 5.18237H20.8161L22.5 0Z" fill="#FFA800" />
-<path d="M37.5 0L39.1839 5.18237H44.6329L40.2245 8.38525L41.9084 13.5676L37.5 10.3647L33.0916 13.5676L34.7755 8.38525L30.3671 5.18237H35.8161L37.5 0Z" fill="#FFA800" />
-<path d="M52.5 0L54.1839 5.18237H59.6329L55.2245 8.38525L56.9084 13.5676L52.5 10.3647L48.0916 13.5676L49.7755 8.38525L45.3671 5.18237H50.8161L52.5 0Z" fill="#FFA800" />
-<path d="M67.5 0L69.1839 5.18237H74.6329L70.2245 8.38525L71.9084 13.5676L67.5 10.3647L63.0916 13.5676L64.7755 8.38525L60.3671 5.18237H65.8161L67.5 0Z" fill="#FFA800" />
-</svg>
-</span>
-                            </div>
-                            <div class="divider"></div>
-                            <div class="testimonial-info">
-                                <div class="testimonial-img">
-                                    <img src="{{asset('frontend/assets/images/homepage-one/about/testimonial-img-3.webp')}}" alt="img">
-                                </div>
-                                <div class="testimonial-info-details">
-                                    <h5 class="testimonial-name">Stefhen Hoking</h5>
-                                    <p class="testimonial-title">HR of <span class="title-inner">Desgin360</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide testimonial-wrapper">
-                            <div class="blockquote">
-<span>
-<svg width="38" height="30" viewBox="0 0 38 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M7.82644 11.9446C8.29006 9.03034 11.9328 5.91742 14.7808 5.85119C14.9795 5.85119 15.1782 5.78496 15.3107 5.65249C15.4431 5.58626 15.5756 5.52003 15.6418 5.32133C16.6353 3.46683 16.1055 2.00972 14.4497 0.817536C12.5289 -0.573341 9.48225 0.817536 7.9589 2.07595C4.11743 5.2551 0.20973 10.7523 0.408427 15.9847C-0.253896 19.4951 -0.121431 23.2703 0.872052 26.3832C1.53437 28.3702 3.45511 29.3636 5.44208 29.4961C7.42905 29.6287 11.5354 30.2247 13.3237 29.0326C15.112 27.8403 15.2445 25.5222 15.4431 23.5353C15.6418 21.3496 16.2379 17.2431 14.3834 15.5211C12.5289 13.8653 7.23035 15.6536 7.82644 11.9446Z" fill="#f6f6f6" />
-<path d="M29.683 11.9446C30.1466 9.03034 33.7893 5.91742 36.6374 5.85119C36.8361 5.85119 37.0348 5.78496 37.1673 5.65249C37.2998 5.58626 37.4322 5.52003 37.4985 5.32133C38.492 3.46683 37.9622 2.00972 36.3064 0.817536C34.3856 -0.573341 31.3389 0.817536 29.8155 2.07595C25.974 5.2551 22.0663 10.7524 22.265 15.9847C21.6027 19.4951 21.7351 23.2703 22.7285 26.3832C23.3908 28.3702 25.3116 29.3636 27.2987 29.4961C29.2856 29.6287 33.392 30.2247 35.1803 29.0326C36.9685 27.8403 37.101 25.5222 37.2997 23.5353C37.4984 21.3496 38.0945 17.2431 36.24 15.5211C34.3855 13.8653 29.0207 15.6536 29.683 11.9446Z" fill="#f6f6f6" />
-</svg>
-</span>
-                            </div>
-                            <p class="testimonial-details">It is a long established fact that a reader will be
-                                distracted by the readable content of a page when looking at its layout. The point of
-                                using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
-                                opposed to using 'Content here, content here', making it look like readable English
-                            </p>
-                            <div class="ratings">
-<span>
-<svg width="75" height="15" viewBox="0 0 75 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M7.5 0L9.18386 5.18237H14.6329L10.2245 8.38525L11.9084 13.5676L7.5 10.3647L3.09161 13.5676L4.77547 8.38525L0.367076 5.18237H5.81614L7.5 0Z" fill="#FFA800" />
-<path d="M22.5 0L24.1839 5.18237H29.6329L25.2245 8.38525L26.9084 13.5676L22.5 10.3647L18.0916 13.5676L19.7755 8.38525L15.3671 5.18237H20.8161L22.5 0Z" fill="#FFA800" />
-<path d="M37.5 0L39.1839 5.18237H44.6329L40.2245 8.38525L41.9084 13.5676L37.5 10.3647L33.0916 13.5676L34.7755 8.38525L30.3671 5.18237H35.8161L37.5 0Z" fill="#FFA800" />
-<path d="M52.5 0L54.1839 5.18237H59.6329L55.2245 8.38525L56.9084 13.5676L52.5 10.3647L48.0916 13.5676L49.7755 8.38525L45.3671 5.18237H50.8161L52.5 0Z" fill="#FFA800" />
-<path d="M67.5 0L69.1839 5.18237H74.6329L70.2245 8.38525L71.9084 13.5676L67.5 10.3647L63.0916 13.5676L64.7755 8.38525L60.3671 5.18237H65.8161L67.5 0Z" fill="#FFA800" />
-</svg>
-</span>
-                            </div>
-                            <div class="divider"></div>
-                            <div class="testimonial-info">
-                                <div class="testimonial-img">
-                                    <img src="{{asset('frontend/assets/images/homepage-one/about/testimonial-img-1.webp')}}" alt="img">
-                                </div>
-                                <div class="testimonial-info-details">
-                                    <h5 class="testimonial-name">Abdullah Al Mamun</h5>
-                                    <p class="testimonial-title">Designer of <span class="title-inner">DesginCode</span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide testimonial-wrapper">
-                            <div class="blockquote">
-<span>
-<svg width="38" height="30" viewBox="0 0 38 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M7.82644 11.9446C8.29006 9.03034 11.9328 5.91742 14.7808 5.85119C14.9795 5.85119 15.1782 5.78496 15.3107 5.65249C15.4431 5.58626 15.5756 5.52003 15.6418 5.32133C16.6353 3.46683 16.1055 2.00972 14.4497 0.817536C12.5289 -0.573341 9.48225 0.817536 7.9589 2.07595C4.11743 5.2551 0.20973 10.7523 0.408427 15.9847C-0.253896 19.4951 -0.121431 23.2703 0.872052 26.3832C1.53437 28.3702 3.45511 29.3636 5.44208 29.4961C7.42905 29.6287 11.5354 30.2247 13.3237 29.0326C15.112 27.8403 15.2445 25.5222 15.4431 23.5353C15.6418 21.3496 16.2379 17.2431 14.3834 15.5211C12.5289 13.8653 7.23035 15.6536 7.82644 11.9446Z" fill="#f6f6f6" />
-<path d="M29.683 11.9446C30.1466 9.03034 33.7893 5.91742 36.6374 5.85119C36.8361 5.85119 37.0348 5.78496 37.1673 5.65249C37.2998 5.58626 37.4322 5.52003 37.4985 5.32133C38.492 3.46683 37.9622 2.00972 36.3064 0.817536C34.3856 -0.573341 31.3389 0.817536 29.8155 2.07595C25.974 5.2551 22.0663 10.7524 22.265 15.9847C21.6027 19.4951 21.7351 23.2703 22.7285 26.3832C23.3908 28.3702 25.3116 29.3636 27.2987 29.4961C29.2856 29.6287 33.392 30.2247 35.1803 29.0326C36.9685 27.8403 37.101 25.5222 37.2997 23.5353C37.4984 21.3496 38.0945 17.2431 36.24 15.5211C34.3855 13.8653 29.0207 15.6536 29.683 11.9446Z" fill="#f6f6f6" />
-</svg>
-</span>
-                            </div>
-                            <p class="testimonial-details">Build the perfect online store using our high-converting
-                                Brandstore website template
-                            </p>
-                            <div class="ratings">
-<span>
-<svg width="75" height="15" viewBox="0 0 75 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M7.5 0L9.18386 5.18237H14.6329L10.2245 8.38525L11.9084 13.5676L7.5 10.3647L3.09161 13.5676L4.77547 8.38525L0.367076 5.18237H5.81614L7.5 0Z" fill="#FFA800" />
-<path d="M22.5 0L24.1839 5.18237H29.6329L25.2245 8.38525L26.9084 13.5676L22.5 10.3647L18.0916 13.5676L19.7755 8.38525L15.3671 5.18237H20.8161L22.5 0Z" fill="#FFA800" />
-<path d="M37.5 0L39.1839 5.18237H44.6329L40.2245 8.38525L41.9084 13.5676L37.5 10.3647L33.0916 13.5676L34.7755 8.38525L30.3671 5.18237H35.8161L37.5 0Z" fill="#FFA800" />
-<path d="M52.5 0L54.1839 5.18237H59.6329L55.2245 8.38525L56.9084 13.5676L52.5 10.3647L48.0916 13.5676L49.7755 8.38525L45.3671 5.18237H50.8161L52.5 0Z" fill="#FFA800" />
-<path d="M67.5 0L69.1839 5.18237H74.6329L70.2245 8.38525L71.9084 13.5676L67.5 10.3647L63.0916 13.5676L64.7755 8.38525L60.3671 5.18237H65.8161L67.5 0Z" fill="#FFA800" />
-</svg>
-</span>
-                            </div>
-                            <div class="divider"></div>
-                            <div class="testimonial-info">
-                                <div class="testimonial-img">
-                                    <img src="{{asset('frontend/assets/images/homepage-one/about/testimonial-img-1.webp')}}" alt="img">
-                                </div>
-                                <div class="testimonial-info-details">
-                                    <h5 class="testimonial-name">Mohammad Rashed Khan</h5>
-                                    <p class="testimonial-title">Ceo of <span class="title-inner">DesginLab</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide testimonial-wrapper">
-                            <div class="blockquote">
-<span>
-<svg width="38" height="30" viewBox="0 0 38 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M7.82644 11.9446C8.29006 9.03034 11.9328 5.91742 14.7808 5.85119C14.9795 5.85119 15.1782 5.78496 15.3107 5.65249C15.4431 5.58626 15.5756 5.52003 15.6418 5.32133C16.6353 3.46683 16.1055 2.00972 14.4497 0.817536C12.5289 -0.573341 9.48225 0.817536 7.9589 2.07595C4.11743 5.2551 0.20973 10.7523 0.408427 15.9847C-0.253896 19.4951 -0.121431 23.2703 0.872052 26.3832C1.53437 28.3702 3.45511 29.3636 5.44208 29.4961C7.42905 29.6287 11.5354 30.2247 13.3237 29.0326C15.112 27.8403 15.2445 25.5222 15.4431 23.5353C15.6418 21.3496 16.2379 17.2431 14.3834 15.5211C12.5289 13.8653 7.23035 15.6536 7.82644 11.9446Z" fill="#f6f6f6" />
-<path d="M29.683 11.9446C30.1466 9.03034 33.7893 5.91742 36.6374 5.85119C36.8361 5.85119 37.0348 5.78496 37.1673 5.65249C37.2998 5.58626 37.4322 5.52003 37.4985 5.32133C38.492 3.46683 37.9622 2.00972 36.3064 0.817536C34.3856 -0.573341 31.3389 0.817536 29.8155 2.07595C25.974 5.2551 22.0663 10.7524 22.265 15.9847C21.6027 19.4951 21.7351 23.2703 22.7285 26.3832C23.3908 28.3702 25.3116 29.3636 27.2987 29.4961C29.2856 29.6287 33.392 30.2247 35.1803 29.0326C36.9685 27.8403 37.101 25.5222 37.2997 23.5353C37.4984 21.3496 38.0945 17.2431 36.24 15.5211C34.3855 13.8653 29.0207 15.6536 29.683 11.9446Z" fill="#f6f6f6" />
-</svg>
-</span>
-                            </div>
-                            <p class="testimonial-details">The lightweight and fully responsive eCommerce website
-                                templates are built for speed and conversion, helping you sell more with little extra
-                                effort.
-                            </p>
-                            <div class="ratings">
-<span>
-<svg width="75" height="15" viewBox="0 0 75 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M7.5 0L9.18386 5.18237H14.6329L10.2245 8.38525L11.9084 13.5676L7.5 10.3647L3.09161 13.5676L4.77547 8.38525L0.367076 5.18237H5.81614L7.5 0Z" fill="#FFA800" />
-<path d="M22.5 0L24.1839 5.18237H29.6329L25.2245 8.38525L26.9084 13.5676L22.5 10.3647L18.0916 13.5676L19.7755 8.38525L15.3671 5.18237H20.8161L22.5 0Z" fill="#FFA800" />
-<path d="M37.5 0L39.1839 5.18237H44.6329L40.2245 8.38525L41.9084 13.5676L37.5 10.3647L33.0916 13.5676L34.7755 8.38525L30.3671 5.18237H35.8161L37.5 0Z" fill="#FFA800" />
-<path d="M52.5 0L54.1839 5.18237H59.6329L55.2245 8.38525L56.9084 13.5676L52.5 10.3647L48.0916 13.5676L49.7755 8.38525L45.3671 5.18237H50.8161L52.5 0Z" fill="#FFA800" />
-<path d="M67.5 0L69.1839 5.18237H74.6329L70.2245 8.38525L71.9084 13.5676L67.5 10.3647L63.0916 13.5676L64.7755 8.38525L60.3671 5.18237H65.8161L67.5 0Z" fill="#FFA800" />
-</svg>
-</span>
-                            </div>
-                            <div class="divider"></div>
-                            <div class="testimonial-info">
-                                <div class="testimonial-img">
-                                    <img src="{{asset('frontend/assets/images/homepage-one/about/testimonial-img-1.webp')}}" alt="img">
-                                </div>
-                                <div class="testimonial-info-details">
-                                    <h5 class="testimonial-name">Shuvo Raihan</h5>
-                                    <p class="testimonial-title">Developer of <span class="title-inner">DesginUX</span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
                 <div class="swiper-pagination"></div>

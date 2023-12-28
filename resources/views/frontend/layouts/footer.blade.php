@@ -80,14 +80,14 @@
                 <div class="col-lg-3 col-sm-6">
                     <div class="footer-order">
                         <div class="logo">
-                            <img src="{{asset('frontend/assets/images/logos/footer-logo.webp')}}" alt="logo">
+                            <img src="{{$officeSetting->logo_url}}" alt="logo">
                         </div>
                         <div class="footer-link order-link">
+                            @if(auth()->guard('guest')->user())
                             <ul>
-                                <li><a href="order.html">Track Order</a></li>
-                                <li><a href="cart.html">Delivery & Returns</a></li>
-                                <li><a href="about.html">Warranty</a></li>
+                                <li><a href="{{route('order.index')}}">Track Order</a></li>
                             </ul>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -98,24 +98,9 @@
                         </h4>
                         <div class="footer-link about-link">
                             <ul>
-                                <li><a href="#">Work With Us</a></li>
-                                <li><a href="#">Coporate News</a></li>
-                                <li><a href="#">Investors</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6">
-                    <div class="links">
-                        <h4 class="footer-heading footer-title">
-                            Useful Links
-                        </h4>
-                        <div class="footer-link useful-link">
-                            <ul>
-                                <li><a href="about.html">Secure Payment</a></li>
-                                <li><a href="privacy.html">Privacy Policy</a></li>
-                                <li><a href="terms.html">Terms of Use</a></li>
-                                <li><a href="product-sidebar.html">Archived Products</a></li>
+                                <li><a href="{{route('about')}}">About</a></li>
+                                <li><a href="{{route('product')}}">Product</a></li>
+                                <li><a href="{{route('contact')}}">Contact</a></li>
                             </ul>
                         </div>
                     </div>
@@ -145,7 +130,7 @@
                                 </div>
                                 <div class="details">
                                     <h4 class="footer-heading">Address:</h4>
-                                    <p>Kathmandu, Nepal</p>
+                                    <p>{{$officeSetting->address}}</p>
                                 </div>
                             </div>
                             <div class="phone address">
@@ -166,18 +151,25 @@
                                 </div>
                                 <div class="details">
                                     <h4 class="footer-heading">Phone:</h4>
-                                    <p>+9779874563210</p>
+                                    <p>{{$officeSetting->phone}}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                                <div class="col-lg-3 col-sm-6">
+                                    <div class="links">
+                                        <div class="footer-link useful-link">
+                                            <iframe src="{{$officeSetting->google_map}}" frameborder="0"></iframe>
+                                        </div>
+                                    </div>
+                                </div>
             </div>
         </div>
         <hr>
         <div class="text-center">
             <a href="https://megabytetech.com/" target="_blank">
-                <h6 class="text-info">@2024</h6><span class="text-white">Designed & Developed By:</span>
+                <h6 class="text-info">@ {{  Carbon\Carbon::now()->year }}</h6><span class="text-white">Designed & Developed By:</span>
             <h6><span class="text-primary">Megabyte Tech Pvt.ltd.</span></h6>
             </a>
         </div>

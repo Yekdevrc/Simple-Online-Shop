@@ -109,15 +109,19 @@
                                         </a>
                                         <div class="price">
                                             @if($item->discount_id !==null)
-                                                <span class="price-cut">{{(int)($item->price * $item->discount->rate /100) + $item->price}}</span>
+                                                <span
+                                                    class="price-cut">{{(int)($item->price * $item->discount->rate /100) + $item->price}}</span>
                                             @endif
                                             <span class="new-price">Rs. {{$item->price}}</span>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="product-cart-btn">
-                                    <a href="#" class="product-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Get Order</a>
-                                </div>
+                                @if(auth()->guard('guest')->user())
+                                    <div class="product-cart-btn">
+                                        <a href="#" class="product-btn" data-bs-toggle="modal"
+                                           data-bs-target="#exampleModal">Get Order</a>
+                                    </div>
+                                @endif
                             </div>
                         </div>
                     @endforeach
@@ -126,40 +130,28 @@
         </div>
 
         <!-- Modal -->
-        <div class="modal fade modal-lg" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade modal-lg" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Order Item</h5>
-                        <span class="text-danger">   (Please Enter your Valid data for ordering)</span>
+                        <span class="text-danger">   (Please Enter Valid data for ordering)</span>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form action="#" class="form-group" method="post">
+                        <form action="#" id="orderForm" class="form-group" method="post">
                             @csrf
                             <div class="row">
-                                <div class="col-md-12 mb-2">
-                                    <label for="name" class="form-label">Name</label>
-                                    <input type="text" name="name" id="name" class="form-control" required>
+                                <input type="hidden" name="item_id" class="item_id" id="item_id" value="">
+                                <div class="col-md-6 mb-2">
+                                    <label for="quantity" class="form-label">Quantity*</label>
+                                    <input type="number" name="quantity" id="quantity" class="form-control" required>
                                 </div>
-                                <div class="col-md-12 mb-2">
-                                    <label for="email" class="form-label">Email</label>
-                                    <input type="email" name="email" id="email" class="form-control" required>
-                                </div>
-                                <div class="col-md-12 mb-2">
-                                    <label for="phone" class="form-label">Phone</label>
-                                    <input type="text" name="phone" id="phone" class="form-control" required>
-                                </div>
-                                <div class="col-md-12 mb-2">
-                                    <label for="address" class="form-label">Address</label>
-                                    <input type="text" name="address" id="address" class="form-control" required>
-                                </div>
-                                <div class="col-md-12 mb-2">
-                                    <label for="item_id" class="form-label">Product</label>
-                                    <select name="item_id" id="item_id" class="form-select">
-                                        <option value="">--Choose--</option>
-                                        <option value="1">Bag</option>
-                                    </select>
+                                <div class="col-md-6 mb-2">
+                                    <label for="order_place" class="form-label">Order Place</label>
+                                    <input type="text" name="order_place" id="order_place" class="form-control"
+                                           required>
                                 </div>
                             </div>
                             <div class="modal-footer">
@@ -174,3 +166,55 @@
 
     </section>
 @endsection
+
+@push('scripts')
+    <script>
+        $(document).on('click', '.order-item', function (e) {
+            e.preventDefault();
+
+            let id = $(this).attr('id');
+
+            $("#item_id").val(id);
+            console.log(id)
+        })
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $(document).ready(function () {
+            $('#orderForm').submit(function (e) {
+                e.preventDefault()
+
+                var formData = new FormData(this)
+
+                console.log('hello')
+
+                $.ajax({
+                    url: "{{route('order.store')}}",
+                    method: "POST",
+                    data: formData,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        if (response.status === 200) {
+                            Swal.fire(
+                                'Added!',
+                                'Order Added Successfully',
+                                'success'
+                            )
+                            $('#orderForm')[0].reset();
+                            $("#exampleModal").modal('hide');
+
+                        }
+                    }
+                })
+            })
+        })
+    </script>
+@endpush
+
+

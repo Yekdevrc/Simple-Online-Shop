@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Frontend\OrderController;
+use App\Http\Controllers\Frontend\TestimonialController;
 use App\Http\Controllers\Guest\GuestUserController;
 use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Route;
@@ -20,10 +21,11 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [FrontendController::class, 'index']);
+    Route::group(['middleware' => ['auth:guest']], function () {
+        Route::resource('order', OrderController::class)->only('index', 'store', 'destroy');
+    });
 
-Route::group(['middleware' => ['auth:guest']], function() {
-    Route::resource('order', OrderController::class)->only('index', 'store', 'destroy');
-});
+    Route::resource('testimonial', TestimonialController::class);
 
 
 
