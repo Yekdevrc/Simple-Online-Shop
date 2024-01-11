@@ -20,7 +20,7 @@ class UpdateSliderRequest extends FormRequest
     {
         return [
             'title' => ['required', 'string', 'max:255'],
-            'image' => ['nullable', 'image', 'mimes:jpg,png,jpeg,gif']
+            'image' => ['nullable', 'image', 'mimes:jpg,png,jpeg,gif,webp']
         ];
     }
 }

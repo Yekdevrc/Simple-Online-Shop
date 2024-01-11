@@ -22,10 +22,10 @@ class StoreItemRequest extends FormRequest
         return [
             'title' => ['required', 'string', 'max:255'],
             'price' => ['required'],
-            'image' => ['required', 'image', 'mimes:jpe,png,jpeg,gif'],
-            'brand_id' => ['required', Rule::exists('brands', 'id')->withoutTrashed()],
-            'category_id' => ['required', Rule::exists('categories', 'id')->withoutTrashed()],
-            'discount_id' => ['required', Rule::exists('discounts', 'id')->withoutTrashed()]
+            'image' => ['required', 'image', 'mimes:jpe,png,jpeg,gif,webp'],
+            'brand_id' => ['nullable', Rule::exists('brands', 'id')->withoutTrashed()],
+            'category_id' => ['nullable', Rule::exists('categories', 'id')->withoutTrashed()],
+            'discount_id' => ['nullable', Rule::exists('discounts', 'id')->withoutTrashed()]
         ];
     }
 }

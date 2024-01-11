@@ -20,7 +20,7 @@ class UpdateCategoryRequest extends FormRequest
     {
         return [
             'title' => ['required', 'string', 'max:255'],
-            'logo' => ['nullable', 'image', 'mimes:jpg,png,jpeg,gif']
+            'logo' => ['nullable', 'image', 'mimes:jpg,png,jpeg,gif,webp']
         ];
     }
 }

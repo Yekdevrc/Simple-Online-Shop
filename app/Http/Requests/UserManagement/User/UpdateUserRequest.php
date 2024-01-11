@@ -26,7 +26,7 @@ class UpdateUserRequest extends FormRequest
             'role_id' => ['required', Rule::exists('roles', 'id')->withoutTrashed()],
             'password' => ['required', 'string', 'confirmed'],
             'password_confirmation' => ['required', 'string'],
-            'profile_photo_path' => ['nullable', 'image', 'mimes:jpg,png,jpeg,gif']
+            'profile_photo_path' => ['nullable', 'image', 'mimes:jpg,png,jpeg,gif,webp']
         ];
     }
 }

@@ -22,23 +22,17 @@ class OfficeSettingController extends Controller
         $validatedData = $request->validate([
             'title' => ['required', 'string', 'max:255'],
             'email' => ['nullable', 'email'],
-            'logo' => ['nullable', 'image', 'mimes:jpg,jpeg,png,gif'],
-            'background_image' => ['nullable', 'image', 'mimes:jpg,jpeg,png,gif'],
+            'logo' => ['nullable', 'image', 'mimes:jpg,jpeg,png,gif,webp'],
+            'background_image' => ['nullable', 'image', 'mimes:jpg,jpeg,png,gif,webp'],
             'google_map' => ['nullable', 'url'],
             'phone' => ['nullable'],
             'website' => ['nullable', 'url'],
             'facebook' => ['nullable', 'url'],
             'introduction' => ['nullable'],
-            'address' => ['nullable', 'string'],
+            'address' => ['nullable'],
             'delivery_charge'=>['nullable', 'numeric']
         ]);
 
-        if ($request->hasFile('logo')) {
-            $this->deleteFile($officeSetting->logo);
-        }
-        if ($request->hasFile('background_image')) {
-            $this->deleteFile($officeSetting->background_image);
-        }
         $officeSetting->update($validatedData);
 
         toast('Office Setting Updated Successfully', 'success');

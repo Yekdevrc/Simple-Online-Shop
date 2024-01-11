@@ -20,7 +20,7 @@ class StoreUserRequest extends FormRequest
             'phone' => ['required'],
             'role_id' => ['required', Rule::exists('roles', 'id')->withoutTrashed()],
             'password' => ['required', 'confirmed'],
-            'profile_photo_path' => ['required', 'image', 'mimes:jpg,png,jpeg,gif'],
+            'profile_photo_path' => ['required', 'image', 'mimes:jpg,png,jpeg,gif,webp'],
         ];
     }
 }

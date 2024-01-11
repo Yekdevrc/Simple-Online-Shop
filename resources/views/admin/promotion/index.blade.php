@@ -2,11 +2,11 @@
 
 @section('content')
     <div class="page-header">
-        <h3 class="page-title"> Testimonial </h3>
+        <h3 class="page-title"> Promotion </h3>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Testimonials</li>
+                <li class="breadcrumb-item active" aria-current="page">Promotion</li>
             </ol>
         </nav>
     </div>
@@ -14,40 +14,35 @@
         <div class="card">
             <div class="card-body">
                 <div class="d-flex justify-content-between mt-2 mb-2">
-                    <h4 class="card-title">Testimonial List</h4>
-                    <a href="{{route('admin.testimonial.create')}}" class="btn btn-outline-primary">
-                        <i class="fa fa-plus-circle"></i> Add New
+                    <h4 class="card-title">Promotion</h4>
+                    <a href="{{route('admin.promotion.create')}}" class="btn btn-sm btn-outline-primary">
+                        <i class="fa fa-plus-circle fa-1x"></i> Add New
                     </a>
                 </div>
                 <table class="table table-hover table-bordered align-middle">
                     <thead>
                     <tr>
                         <th> SN</th>
-                        <th> Name</th>
-                        <th> Designation</th>
-                        <th> Company</th>
-                        <th> Photo</th>
-                        <th> message</th>
+                        <th> Title</th>
+                        <th> Image</th>
                         <th> Action</th>
                     </tr>
                     </thead>
                     <tbody>
-                    @forelse($testimonials as $testimonial)
+                    @forelse($promotions as $promotion)
                         <tr>
                             <td>{{$loop->iteration}}
                             </td>
-                            <td>{{$testimonial->name}}</td>
-                            <td>{{$testimonial->designation}}</td>
-                            <td>{{$testimonial->company}}</td>
-                            <td><img src="{{$testimonial->photo_url}}" width="100" height="100"
-                                     alt="{{$testimonial->name}}"></td>
-                            <td>{{$testimonial->message}}</td>
+                            <td>
+                                {{$promotion->title}}
+                            </td>
+                            <td><img src="{{$promotion->image_url}}" width="80" height="100" alt=""></td>
                             <td class="d-flex">
-                                <a href="{{route('admin.testimonial.edit', $testimonial)}}"
-                                   class="btn btn-primary btn-sm me-1" title="edit">
-                                    <i class="fa fa-pen"></i>
+                                <a href="{{route('admin.promotion.edit', $promotion)}}"
+                                   class="btn btn-sm btn-outline-success me-1" title="Edit">
+                                    <i class="fa fa-pencil"></i>
                                 </a>
-                                <form action="{{route('admin.testimonial.destroy',$testimonial)}}" method="post">
+                                <form action="{{route('admin.promotion.destroy',$promotion)}}" method="post">
                                     @csrf
                                     @method('delete')
                                     <button type="submit" class="btn btn-sm btn-outline-danger delete_confirm"
@@ -58,10 +53,11 @@
                             </td>
                         </tr>
                     @empty
-                        <td colspan="7" class="text-center">There is no data found</td>
+                        <td colspan="4" class="text-center">There is no data found</td>
                     @endforelse
                     </tbody>
                 </table>
+                {{--                {!! $brands->withQueryString()->links('pagination::bootstrap-5') !!}--}}
             </div>
         </div>
     </div>

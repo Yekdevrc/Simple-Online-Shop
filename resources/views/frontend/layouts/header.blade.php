@@ -9,7 +9,7 @@
                 <div class="header-contact d-none d-lg-block">
                     <a href="#">
                         <span>Need help? Call us:</span>
-                        <span class="contact-number">+9779874563210</span>
+                        <span class="contact-number">{{$officeSetting->phone}}</span>
                     </a>
                 </div>
             </div>
@@ -20,14 +20,9 @@
             <div class="header-center">
                 <div class="logo">
                     <a href="{{url('/')}}">
-                        <img src="{{$officeSetting->logo_url}}" width="120" height="80" alt="logo">
+                        <img src="{{$officeSetting->logo_url}}" width="100" height="80" alt="logo">
                     </a>
                 </div>
-                @if(!auth()->guard('guest')->user())
-                <div class="header-center">
-                    <span class="text-center">Please Login for Order the product !! </span>
-                </div>
-                @endif
                 <div class="header-cart-items">
                     <div class="header-search">
                         <button class="header-search-btn" onclick="modalAction('.search')">
@@ -52,10 +47,10 @@
                                 </div>
                                 <div class="wrapper-main">
                                     <div class="search-section">
-                                        <input type="text" placeholder="Search Products.........">
-                                        <div class="divider"></div>
-                                        <button type="button">All Categories</button>
-                                        <a href="#" class="shop-btn">Search</a>
+                                            @csrf
+                                            <input type="text" name="title" placeholder="Search Products.........">
+                                            <div class="divider"></div>
+                                            <button href="{{route('product')}}" class="shop-btn">Search</button>
                                     </div>
                                 </div>
                             </div>
@@ -81,9 +76,8 @@ Wishlist
 </span>
                         </a>
                     </div>
-                    @if(auth()->guard('guest')->user())
-                    <div class="header-cart">
-                        <a href="{{route('order.index')}}" class="cart-item">
+                        <div class="header-cart">
+                            <a href="{{route('order.index')}}" class="cart-item">
 <span>
 <svg width="35" height="28" viewBox="0 0 35 28" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path
@@ -96,17 +90,16 @@ Wishlist
     d="M22.509 25.2393C22.5193 26.4842 21.5393 27.4971 20.3064 27.5155C19.048 27.5342 18.0272 26.525 18.0277 25.2622C18.0279 24.0208 19.0214 23.0161 20.2572 23.0074C21.4877 22.9984 22.4988 24.0006 22.509 25.2393Z"
     fill="#6E6D79"/>
     @if(!$order)
-<circle cx="26.9523" cy="8" r="8" fill="#AE1C9A"/></svg>
+        <circle cx="26.9523" cy="8" r="8" fill="#AE1C9A"/></svg>
     @endif
 </span>
-                            <span class="cart-text">
+                                <span class="cart-text">
 Order
 </span>
-                        </a>
+                            </a>
 
 
-                    </div>
-                    @endif
+                        </div>
                 </div>
             </div>
         </div>
@@ -123,7 +116,7 @@ Order
 </span>
                 </button>
                 <a href="{{url('/')}}" class="mobile-header-logo">
-                    <img src="{{$officeSetting->logo_url}}" alt="logo">
+                    <img src="{{$officeSetting->logo_url}}" width="100" height="80" alt="logo">
                 </a>
                 <a href="{{route('product')}}" class="header-cart cart-item">
 <span>
@@ -272,10 +265,12 @@ All Categories
                                 <div class="shop-menu">
                                     <div class="menu-wrapper">
                                         <div class="menu-list">
-                                            <h5 class="menu-title">Brands</h5>
+                                            <h5 class="menu-title">Products</h5>
                                             <ul>
-                                                @foreach($allBrands as $brand)
-                                                    <li><a href="#">{{$brand->title}}</a></li>
+                                                @foreach($products as $product)
+                                                    <li><a href=" {{ route('product') }} ">
+                                                        {{$product->title}}
+                                                    </a></li>
                                                 @endforeach
                                             </ul>
                                         </div>
@@ -305,12 +300,13 @@ All Categories
                     </div>
                     <div class="header-vendor-btn">
                         @if(!auth()->guard('guest')->user())
-                        <a href="{{route('user.login')}}" class="shop-btn">
-                            <span class="list-text shop-text">Login</span>
-                        </a>
+                            <a href="{{route('user.login')}}" class="shop-btn">
+                                <span class="list-text shop-text">Login</span>
+                            </a>
                         @else
                             <a href="#" class="shop-btn">
-                                <span class="list-text shop-text">{{auth()->guard('guest')->user()->name ?? 'LoggedIn'}}</span>
+                                <span
+                                    class="list-text shop-text">{{auth()->guard('guest')->user()->name ?? 'LoggedIn'}}</span>
                             </a>
                         @endif
                     </div>

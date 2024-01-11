@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\FAQController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Frontend\OrderController;
 use App\Http\Controllers\Frontend\TestimonialController;
@@ -25,9 +26,6 @@ Route::get('/', [FrontendController::class, 'index']);
         Route::resource('order', OrderController::class)->only('index', 'store', 'destroy');
     });
 
-    Route::resource('testimonial', TestimonialController::class);
-
-
 
 Route::post('login', [AuthController::class, 'login'])->name('auth.login');
 
@@ -49,6 +47,9 @@ Route::prefix('user')->as('user.')->group(function (){
     Route::get('register', [GuestUserController::class, 'registerPage'])->name('register');
     Route::post('register', [GuestUserController::class, 'register'])->name('register');
 });
+
+
+Route::post('faq', [FAQController::class, 'store'])->name('faq');
 
 Route::get('/login', function (){
     return view('auth.login');

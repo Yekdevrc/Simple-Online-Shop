@@ -25,7 +25,9 @@ class OfficeSetting extends Model
         'phone' ,
         'website' ,
         'facebook_link' ,
-        'introduction'
+        'introduction',
+        'address',
+        'delivery_charge'
     ];
 
     public function setLogoAttribute($value)

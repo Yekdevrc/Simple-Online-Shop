@@ -2,7 +2,7 @@
 <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-        <a href="index.html" class="logo d-flex align-items-center">
+        <a href="{{route('admin.dashboard')}}" class="logo d-flex align-items-center">
             <img src="{{asset('assets/img/logo.png')}}" alt="">
             <span class="d-none d-lg-block">Online Shop</span>
         </a>
@@ -25,62 +25,37 @@
                 </a>
             </li><!-- End Search Icon-->
 
-            <li class="nav-item dropdown">
-
-                <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
-                    <i class="bi bi-bell"></i>
-                    <span class="badge bg-primary badge-number">4</span>
-                </a><!-- End Notification Icon -->
-
-                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
-                    <li class="dropdown-header">
-                        You have 4 new notifications
-                        <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
-                    </li>
-                    <li>
-                        <hr class="dropdown-divider">
-                    </li>
-
-                    <li class="notification-item">
-                        <i class="bi bi-exclamation-circle text-warning"></i>
-                        <div>
-                            <h4>Lorem Ipsum</h4>
-                            <p>Quae dolorem earum veritatis oditseno</p>
-                            <p>30 min. ago</p>
-                        </div>
-                    </li>
-
-                </ul><!-- End Notification Dropdown Items -->
-
-            </li><!-- End Notification Nav -->
 
             <li class="nav-item dropdown">
 
                 <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
                     <i class="bi bi-chat-left-text"></i>
-                    <span class="badge bg-success badge-number">3</span>
+                    <span class="badge bg-success badge-number">{{\App\Models\FAQ::all()->count()}}</span>
                 </a><!-- End Messages Icon -->
 
                 <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
                     <li class="dropdown-header">
-                        You have 3 new messages
+                        You have  new messages
                         <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
                     </li>
                     <li>
                         <hr class="dropdown-divider">
                     </li>
 
-                    <li class="message-item">
+                    @forelse(\App\Models\FAQ::all() as $faq)
+                    <li class="message-item text-center">
                         <a href="#">
-                            <img src="assets/img/messages-1.jpg" alt="" class="rounded-circle">
                             <div>
-                                <h4>Maria Hudson</h4>
-                                <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
-                                <p>4 hrs. ago</p>
+                                <h4>{{$faq->name}}</h4>
+                                <p>{{$faq->subject}}</p>
+                                <p>{{$faq->email}}</p>
                             </div>
                         </a>
                     </li>
+                    @empty
+                        <li class="message-item text-center">No Message Found</li>
                     <li>
+                        @endforelse
                         <hr class="dropdown-divider">
                     </li>
 

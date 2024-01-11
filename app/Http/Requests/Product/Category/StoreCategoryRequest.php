@@ -20,7 +20,7 @@ class StoreCategoryRequest extends FormRequest
     {
         return [
             'title' => ['required', 'string', 'max:255'],
-            'logo' => ['required', 'image', 'mimes:jpg,png,jpeg,gif']
+            'logo' => ['required', 'image', 'mimes:jpg,png,jpeg,gif,webp']
         ];
     }
 }
